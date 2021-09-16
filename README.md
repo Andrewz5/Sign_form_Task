@@ -1,6 +1,7 @@
 # flutter_app
 
 A new Flutter application.
+![screenshot](https://user-images.githubusercontent.com/67756820/133530557-de142ac8-0c8c-44fd-ac4d-74db67b823f4.png)
 
 ## Getting Started
 

@@ -33,7 +33,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-
       _counter++;
     });
   }
@@ -44,88 +43,95 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: ListView(
-          children: <Widget>[
-            Column(
-              children: [
-                const SizedBox(
-                  height: 20,
-                ),
-                const Text("Login Form",
-                    style: TextStyle(fontSize: 35, color: Colors.blueAccent)),
-                Image.asset(
-                  "images/logo.png",
-                  height: 130,
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const TextField(
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Phone Number',
-                labelStyle: TextStyle(fontSize: 20),
-                filled: true,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: SafeArea(
+          child: Column(
+            children: <Widget>[
+              const SizedBox(
+                height: 30.0,
               ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Password',
-                labelStyle: TextStyle(fontSize: 20),
-                filled: true,
+              const SizedBox(
+                width: 165.0,
+                height: 165.0,
+                child: Image(
+                  image: AssetImage('images/logo.png'),
+                ),
               ),
-            ),
-            Container(
-              width: 40,
-              margin: const EdgeInsets.all(30.0),
-              child: TextButton(
-                style: ButtonStyle(
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
+                child: const TextField(
+                  keyboardType: TextInputType.number,
+                  maxLength: 11,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Phone Number',
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(
+                    horizontal: 20.0, vertical: 10.0),
+                child: const TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 330.0,
+                child: TextButton(
+                  style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.lightBlue),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            side: const BorderSide(color: Colors.blueAccent)))),
-                onPressed: () {},
-                child: const Text(
-                  'Login',
-                  style: TextStyle(color: Colors.white),
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        side: const BorderSide(color: Colors.blueAccent),
+                      ),
+                    ),
+                  ),
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onPressed: () {},
                 ),
               ),
-
-            ),
-            const Text("Forget password?Tap me",
+              const SizedBox(
+                height: 10.0,
+              ),
+              const Text(
+                "Forget password? Tap me",
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15, color: Colors.grey))
-           , Container(
-              width: 40,
-              margin: const EdgeInsets.all(30.0),
-              child: TextButton(
-                style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.grey),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                            side: const BorderSide(color: Colors.grey)))),
-                onPressed: () {},
-                child: const Text(
-                  'No Account? SignUp',
-                  style: TextStyle(color: Colors.black),
+                style: TextStyle(fontSize: 15, color: Colors.grey),
+              ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              SizedBox(
+                width: 330.0,
+                child: TextButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.grey),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              side:
+                                  const BorderSide(color: Colors.blueAccent)))),
+                  child: const Text(
+                    'No Account? SignUp',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {},
                 ),
               ),
-
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

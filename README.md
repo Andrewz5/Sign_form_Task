@@ -1,5 +1,4 @@
 # flutter_app
-![screenshot](https://user-images.githubusercontent.com/67756820/133530189-3c343591-5f0a-462f-90f9-8bdaef0fa700.png)
 
 A new Flutter application.
 
